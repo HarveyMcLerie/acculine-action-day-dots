@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="MailApp">
+
+  <Id>7e2a6f2b-9c1d-4b6a-8b2e-3a1d4f6c9a10</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Acculine</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Action Day Dots" />
+  <Description DefaultValue="Mark an email with a coloured dot for the day Harvey plans to action it." />
+  <IconUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/group-32.png" />
+  <HighResIconUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/group-80.png" />
+  <SupportUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/" />
+
+  <AppDomains>
+    <AppDomain>https://acculine135.app.n8n.cloud</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.5" />
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/commands.html" />
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.5">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+
+          <FunctionFile resid="Commands.Url" />
+
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabReadMessage">
+              <Group id="ActionDayDots.Group">
+                <Label resid="ActionDayDots.GroupLabel" />
+
+                <Control xsi:type="Button" id="ActionDayDots.Monday">
+                  <Label resid="Day.Monday.Label" />
+                  <Supertip>
+                    <Title resid="Day.Monday.Label" />
+                    <Description resid="Day.Monday.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Monday.16" />
+                    <bt:Image size="32" resid="Icon.Monday.32" />
+                    <bt:Image size="80" resid="Icon.Monday.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>setMonday</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="ActionDayDots.Tuesday">
+                  <Label resid="Day.Tuesday.Label" />
+                  <Supertip>
+                    <Title resid="Day.Tuesday.Label" />
+                    <Description resid="Day.Tuesday.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Tuesday.16" />
+                    <bt:Image size="32" resid="Icon.Tuesday.32" />
+                    <bt:Image size="80" resid="Icon.Tuesday.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>setTuesday</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="ActionDayDots.Wednesday">
+                  <Label resid="Day.Wednesday.Label" />
+                  <Supertip>
+                    <Title resid="Day.Wednesday.Label" />
+                    <Description resid="Day.Wednesday.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Wednesday.16" />
+                    <bt:Image size="32" resid="Icon.Wednesday.32" />
+                    <bt:Image size="80" resid="Icon.Wednesday.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>setWednesday</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="ActionDayDots.Thursday">
+                  <Label resid="Day.Thursday.Label" />
+                  <Supertip>
+                    <Title resid="Day.Thursday.Label" />
+                    <Description resid="Day.Thursday.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Thursday.16" />
+                    <bt:Image size="32" resid="Icon.Thursday.32" />
+                    <bt:Image size="80" resid="Icon.Thursday.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>setThursday</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="ActionDayDots.Friday">
+                  <Label resid="Day.Friday.Label" />
+                  <Supertip>
+                    <Title resid="Day.Friday.Label" />
+                    <Description resid="Day.Friday.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Friday.16" />
+                    <bt:Image size="32" resid="Icon.Friday.32" />
+                    <bt:Image size="80" resid="Icon.Friday.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>setFriday</FunctionName>
+                  </Action>
+                </Control>
+
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.Monday.16" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/red-16.png" />
+        <bt:Image id="Icon.Monday.32" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/red-32.png" />
+        <bt:Image id="Icon.Monday.80" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/red-80.png" />
+
+        <bt:Image id="Icon.Tuesday.16" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-16.png" />
+        <bt:Image id="Icon.Tuesday.32" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-32.png" />
+        <bt:Image id="Icon.Tuesday.80" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-80.png" />
+
+        <bt:Image id="Icon.Wednesday.16" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-16.png" />
+        <bt:Image id="Icon.Wednesday.32" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-32.png" />
+        <bt:Image id="Icon.Wednesday.80" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-80.png" />
+
+        <bt:Image id="Icon.Thursday.16" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/green-16.png" />
+        <bt:Image id="Icon.Thursday.32" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/green-32.png" />
+        <bt:Image id="Icon.Thursday.80" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/green-80.png" />
+
+        <bt:Image id="Icon.Friday.16" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-16.png" />
+        <bt:Image id="Icon.Friday.32" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-32.png" />
+        <bt:Image id="Icon.Friday.80" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-80.png" />
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/commands.html" />
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="ActionDayDots.GroupLabel" DefaultValue="Action Day" />
+        <bt:String id="Day.Monday.Label" DefaultValue="Mon" />
+        <bt:String id="Day.Tuesday.Label" DefaultValue="Tue" />
+        <bt:String id="Day.Wednesday.Label" DefaultValue="Wed" />
+        <bt:String id="Day.Thursday.Label" DefaultValue="Thu" />
+        <bt:String id="Day.Friday.Label" DefaultValue="Fri" />
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="Day.Monday.Tooltip" DefaultValue="Flag this email to action on Monday" />
+        <bt:String id="Day.Tuesday.Tooltip" DefaultValue="Flag this email to action on Tuesday" />
+        <bt:String id="Day.Wednesday.Tooltip" DefaultValue="Flag this email to action on Wednesday" />
+        <bt:String id="Day.Thursday.Tooltip" DefaultValue="Flag this email to action on Thursday" />
+        <bt:String id="Day.Friday.Tooltip" DefaultValue="Flag this email to action on Friday" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
