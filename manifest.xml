@@ -17,6 +17,7 @@
   <SupportUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/" />
 
   <AppDomains>
+    <AppDomain>https://harveymclerie.github.io</AppDomain>
     <AppDomain>https://acculine135.app.n8n.cloud</AppDomain>
   </AppDomains>
 
