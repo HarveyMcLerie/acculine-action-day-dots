@@ -1,0 +1,171 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.24/MicrosoftTeams.schema.json#",
+    "manifestVersion": "1.24",
+    "version": "1.0.0",
+    "id": "7e2a6f2b-9c1d-4b6a-8b2e-3a1d4f6c9a10",
+    "localizationInfo": {
+        "defaultLanguageTag": "en-us"
+    },
+    "developer": {
+        "name": "Acculine",
+        "websiteUrl": "https://harveymclerie.github.io/acculine-action-day-dots/",
+        "privacyUrl": "https://harveymclerie.github.io/acculine-action-day-dots/",
+        "termsOfUseUrl": "https://harveymclerie.github.io/acculine-action-day-dots/"
+    },
+    "name": {
+        "short": "Action Day Dots",
+        "full": "Action Day Dots"
+    },
+    "description": {
+        "short": "Mark an email with a coloured dot for the day it should be actioned.",
+        "full": "Adds one-click coloured buttons to the Outlook ribbon so an email can be marked with the weekday it should be actioned. The chosen day's coloured dot is added to the subject line so it is visible in the inbox list."
+    },
+    "icons": {
+        "outline": "icons/app-outline-64.png",
+        "color": "icons/app-color-128.png"
+    },
+    "accentColor": "#0078D4",
+    "validDomains": [
+        "https://harveymclerie.github.io",
+        "https://acculine135.app.n8n.cloud"
+    ],
+    "showLoadingIndicator": false,
+    "isFullScreen": false,
+    "defaultBlockUntilAdminAction": false,
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.Read.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    "extensions": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.5"
+                    }
+                ],
+                "scopes": [
+                    "mail"
+                ]
+            },
+            "runtimes": [
+                {
+                    "id": "commandsRuntime",
+                    "type": "general",
+                    "code": {
+                        "page": "https://harveymclerie.github.io/acculine-action-day-dots/commands.html"
+                    },
+                    "actions": [
+                        { "id": "setMonday", "type": "executeFunction" },
+                        { "id": "setTuesday", "type": "executeFunction" },
+                        { "id": "setWednesday", "type": "executeFunction" },
+                        { "id": "setThursday", "type": "executeFunction" },
+                        { "id": "setFriday", "type": "executeFunction" }
+                    ]
+                }
+            ],
+            "ribbons": [
+                {
+                    "contexts": [
+                        "mailRead"
+                    ],
+                    "tabs": [
+                        {
+                            "builtInTabId": "TabDefault",
+                            "groups": [
+                                {
+                                    "id": "actionDayDotsGroup",
+                                    "label": "Action Day",
+                                    "controls": [
+                                        {
+                                            "id": "actionDayDotsMonday",
+                                            "type": "button",
+                                            "label": "Mon",
+                                            "icons": [
+                                                { "size": 16, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/red-16.png" },
+                                                { "size": 32, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/red-32.png" },
+                                                { "size": 80, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/red-80.png" }
+                                            ],
+                                            "supertip": {
+                                                "title": "Mon",
+                                                "description": "Flag this email to action on Monday"
+                                            },
+                                            "actionId": "setMonday"
+                                        },
+                                        {
+                                            "id": "actionDayDotsTuesday",
+                                            "type": "button",
+                                            "label": "Tue",
+                                            "icons": [
+                                                { "size": 16, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-16.png" },
+                                                { "size": 32, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-32.png" },
+                                                { "size": 80, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/orange-80.png" }
+                                            ],
+                                            "supertip": {
+                                                "title": "Tue",
+                                                "description": "Flag this email to action on Tuesday"
+                                            },
+                                            "actionId": "setTuesday"
+                                        },
+                                        {
+                                            "id": "actionDayDotsWednesday",
+                                            "type": "button",
+                                            "label": "Wed",
+                                            "icons": [
+                                                { "size": 16, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-16.png" },
+                                                { "size": 32, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-32.png" },
+                                                { "size": 80, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/yellow-80.png" }
+                                            ],
+                                            "supertip": {
+                                                "title": "Wed",
+                                                "description": "Flag this email to action on Wednesday"
+                                            },
+                                            "actionId": "setWednesday"
+                                        },
+                                        {
+                                            "id": "actionDayDotsThursday",
+                                            "type": "button",
+                                            "label": "Thu",
+                                            "icons": [
+                                                { "size": 16, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/green-16.png" },
+                                                { "size": 32, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/green-32.png" },
+                                                { "size": 80, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/green-80.png" }
+                                            ],
+                                            "supertip": {
+                                                "title": "Thu",
+                                                "description": "Flag this email to action on Thursday"
+                                            },
+                                            "actionId": "setThursday"
+                                        },
+                                        {
+                                            "id": "actionDayDotsFriday",
+                                            "type": "button",
+                                            "label": "Fri",
+                                            "icons": [
+                                                { "size": 16, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-16.png" },
+                                                { "size": 32, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-32.png" },
+                                                { "size": 80, "url": "https://harveymclerie.github.io/acculine-action-day-dots/icons/blue-80.png" }
+                                            ],
+                                            "supertip": {
+                                                "title": "Fri",
+                                                "description": "Flag this email to action on Friday"
+                                            },
+                                            "actionId": "setFriday"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
