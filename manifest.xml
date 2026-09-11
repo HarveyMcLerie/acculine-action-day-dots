@@ -13,7 +13,7 @@
   <DisplayName DefaultValue="Action Day Dots" />
   <Description DefaultValue="Mark an email with a coloured dot for the day Harvey plans to action it." />
   <IconUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/group-32.png" />
-  <HighResIconUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/group-80.png" />
+  <HighResolutionIconUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/icons/group-80.png" />
   <SupportUrl DefaultValue="https://harveymclerie.github.io/acculine-action-day-dots/" />
 
   <AppDomains>
